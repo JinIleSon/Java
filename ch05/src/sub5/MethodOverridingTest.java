@@ -52,6 +52,7 @@ class CCC extends BBB {
 public class MethodOverridingTest {
 	public static void main(String[] args) {
 		
+		// 오버라이드 메서드 실습
 		CCC c = new CCC();
 		
 		c.method1();
@@ -59,5 +60,10 @@ public class MethodOverridingTest {
 		c.method3();
 		c.method3(1);
 		c.method3(1, 2);
+		
+		// Sedan 클래스 오버라이드 메서드 실습
+		Sedan sonata = new Sedan("소나타", "흰색", 0, 2000);
+		sonata.speedUp(200);
+		sonata.show();
 	}
 }
