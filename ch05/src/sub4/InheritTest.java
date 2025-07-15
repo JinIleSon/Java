@@ -1,0 +1,49 @@
+package sub4;
+
+/*
+ * 날짜 : 2025/07/15
+ * 이름 : 손진일
+ * 내용 : 상속(Inheritance) 실습하기
+ */
+
+public class InheritTest {
+	
+	public static void main(String[] args) {
+		
+		// Car 상속 실습
+		Sedan sonata = new Sedan("소나타", "흰색", 0, 2000);
+		sonata.speedUp(80);
+		sonata.turbo();
+		sonata.speedDown(20);
+		sonata.show();
+		
+		Truck bongo = new Truck("봉고", "남색", 0, 0);
+		bongo.load(100);
+		sonata.speedUp(100);
+		sonata.speedDown(80);
+		sonata.show();
+		
+		// StockAccount 실습
+		System.out.println();
+		StockAccount kb = new StockAccount("KB증권", "101-22-0100", "홍길동", 10000, "삼성전자", 10, 100000);
+		kb.deposit(1000000); // 입금
+		kb.withdraw(50000); // 출금
+		kb.buy(5, 80000);
+		kb.show();
+		
+		System.out.println();
+		kb.sell(5,  90000);
+		kb.show();
+		
+		////////////////////////////////////////////////////////
+		///
+		
+		Doctor doctor = new Doctor("김유신", 23, "소아과");
+		Engineer engineer = new Engineer("김춘추", 21, "소프트웨어");
+		
+		doctor.work();
+		System.out.println();
+		engineer.work();
+	}
+
+}

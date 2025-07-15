@@ -63,5 +63,34 @@ public class EncapsuleTest {
 		wr.deposit(20000);
 		wr.setBank("너희은행");
 		wr.show();
+		
+		/////////////////////////////////////////////////////////////
+		///
+		
+		Book book1 = new Book("상국지", "나관중", "10001", 10);
+		book1.show();
+		
+		boolean is0k = book1.borrowBook();
+		
+		if(is0k) {
+			System.out.println(book1.getTitle() + "도서 대출 성공!");
+		}else {
+			System.out.println(book1.getTitle() + "도서 대출 실패!");
+		}
+		
+		book1.show();
+		
+		Book book2 = new Book("명품 Java", "황기태", "10002", 1);
+		
+		boolean is0k1 = book2.borrowBook();
+		boolean is0k2 = book2.borrowBook();
+		
+		if(is0k2) {
+			System.out.println(book2.getTitle() + "도서 대출 성공!");
+		}else {
+			System.out.println(book2.getTitle() + "도서 대출 실패!");
+		}
+		
+		book2.show();
 	}
 }
