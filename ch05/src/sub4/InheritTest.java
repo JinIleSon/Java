@@ -37,6 +37,7 @@ public class InheritTest {
 		
 		////////////////////////////////////////////////////////
 		///
+		///
 		
 		Doctor doctor = new Doctor("김유신", 23, "소아과");
 		Engineer engineer = new Engineer("김춘추", 21, "소프트웨어");
