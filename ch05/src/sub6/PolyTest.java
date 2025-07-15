@@ -20,7 +20,36 @@ public class PolyTest {
 		Animal shark = new Shark();
 		
 		tiger.move();
+		tiger.hunt();
+		
 		eagle.move();
+		eagle.hunt();
+		
 		shark.move();
+		shark.hunt();
+
+		System.out.println();
+		
+		// 다운캐스팅 - 부모타입의 객체를 자식타입으로 캐스팅(Casting, 형변환)
+		Tiger t = (Tiger) tiger;
+		Eagle e = (Eagle) eagle;
+		Shark s = (Shark) shark;
+		
+		t.move();
+		t.hunt();
+		
+		e.move();
+		e.hunt();
+		
+		s.move();
+		s.hunt();
+		
+		// 다형성을 활용한 객체 배열
+		Animal arr[] = {t, e, s};
+		
+		System.out.println();
+		arr[0].move();
+		arr[1].move();
+		arr[2].move();
 	}
 }
