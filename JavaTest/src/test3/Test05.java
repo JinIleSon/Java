@@ -22,6 +22,7 @@ class Vehicle {
 }
 
 class CarFactory {
+	// 싱글톤
 	private static CarFactory instance = new CarFactory();
 	private CarFactory() {}
 	

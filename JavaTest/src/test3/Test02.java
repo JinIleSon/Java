@@ -10,8 +10,10 @@ class King {
 	private String name;
 	private int year;
 	
+	
+	// 생성자 오버로드
 	public King(int year) {
-		this("정조");
+		this("정조"); // 생성자 호출
 		this.year = year;
 	}
 	

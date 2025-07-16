@@ -11,7 +11,7 @@ class Adder {
 	public static Adder getInstance() {
 		return instance;
 	}
-	public Adder() {}
+	private Adder() {}
 	
 	private Adder(int value) {
 		y += value;
