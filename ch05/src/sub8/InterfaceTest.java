@@ -29,7 +29,7 @@ public class InterfaceTest {
 		
 		socket.switchOn();
 		socket.switchOff();
-		
+		System.out.println();
 		// 인터페이스 역할 3 - 다중 상속 효과
 		SmartTv smartTv = new SmartTv();
 		smartTv.process();
