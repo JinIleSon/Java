@@ -26,6 +26,7 @@ public class Subject {
 			
 			System.out.print(students[i].getName() + ", ");
 		}
+		System.out.println();
 	}
 	
 	public String getSubName() {

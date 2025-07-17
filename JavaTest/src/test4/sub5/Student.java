@@ -29,8 +29,10 @@ public class Student {
 	public void setScore(Subject subject, int score) {
 		
 		for (int i = 0; i < subjectCount; i++) {
-			scores[i] = score;
-			System.out.println(name + " - " + subject.getSubName() + " 점수 입력 완료");
+			if(subjects[i].equals(subject)) { // 배열원소의 subject와 입력된 subject가 같으면
+				scores[i] = score;
+				System.out.println(name + " - " + subject.getSubName() + " 점수 입력 완료");
+			}
 		}
 		
 		
@@ -39,6 +41,12 @@ public class Student {
 	public void printStudentInfo() {
 		System.out.println("이름 : " + this.name);
 		System.out.println("아이디 : " + this.studentId);
+		
+		System.out.println("성적");
+		
+		for (int i = 0; i < subjectCount; i++) {
+			System.out.println(" - " + subjects[i].getSubName() + " : " + scores[i]);
+		}
 		
 	}
 	
