@@ -11,10 +11,13 @@ public class Main6 {
 		char alpha = 'a';
 		
 		String s = sc.next();
-		for (int i = 0; i < s.length; i++) {
-			while (alpha < 'z') {
-				if (s.indexOf(alpha))
-					alpha++;
+		for (int i = 0; i < s.length(); i++) {
+			while (alpha <= 'z') {
+				if (s.indexOf(alpha) >= 0)
+					System.out.print(s.indexOf(alpha)+" ");
+				else
+					System.out.print("-1 ");
+				alpha++;
 			}
 			
 		}
