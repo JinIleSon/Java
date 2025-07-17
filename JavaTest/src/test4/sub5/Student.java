@@ -45,7 +45,6 @@ public class Student {
 		for (int i = 0; i < subjectCount; i++) {
 			System.out.println(" - " + subjects[i].getSubName() + " : " + scores[i]);
 		}
-		
 	}
 	
 	public String getName() {
