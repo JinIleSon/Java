@@ -11,22 +11,24 @@ public class Subject {
 		this.studentCount = 0;
 	}
 	
-	public void addStudent(Student[] students) {
+	public void addStudent(Student students) {
 		
+		this.students[studentCount++] = students;
 	}
 	
 	public void printSubjectInfo() {
-		int i = 0;
-		while (students[i] != null) {
-			if(i % 2 == 0)
-				System.out.println("과목명 : " + students[i]);
-			else
-				System.out.println("수강생 : ");
-			i++;
+		
+		System.out.println("과목명 : " + this.subName);
+		
+		System.out.print("수강생 : ");
+		
+		for(int i = 0; i < studentCount ; i++) {
+			
+			System.out.print(students[i].getName() + ", ");
 		}
 	}
 	
-	public String getName() {
+	public String getSubName() {
 		return this.subName;
 	}
 }

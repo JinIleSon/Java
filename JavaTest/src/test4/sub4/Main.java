@@ -2,7 +2,7 @@ package test4.sub4;
 
 /**
 * 날짜 : 2025/07/17
-* 이름 : 김철학
+* 이름 : 손진일
 * 내용 : 자바 클래스 문제
 */
 public class Main {
