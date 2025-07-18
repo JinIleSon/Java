@@ -3,7 +3,14 @@ package p224;
 class Sample {
 	public int a;
 	private int b;
-	int c;
+	int c; // default
+	protected int d;
+}
+
+class Sub extends Sample {
+	public void method() {
+		d = 10;
+	}
 }
 
 public class AccessEx {
