@@ -27,7 +27,7 @@ public class Main6 {
 								}
 							}
 						}else if(c[i+1] == '-') {
-							count++;
+							count+=1;
 							i++;
 						}else {
 							if (c.length == 2)
