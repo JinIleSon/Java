@@ -17,7 +17,7 @@ public class Main6 {
 						if(c[i+1] == 'z') {
 							if (i <= c.length - 3) {
 								if (c[i+2] == '=')
-									i+=2;
+									i+=2;					
 							}else {
 								if (i < 2 && c.length <= 2) {
 									count+=2;
