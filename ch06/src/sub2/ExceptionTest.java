@@ -1,7 +1,11 @@
-package sub1;
+package sub2;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+
+import sub1.Animal;
+import sub1.Eagle;
+import sub1.Tiger;
 
 /*
  * 날짜 : 2025/07/21
