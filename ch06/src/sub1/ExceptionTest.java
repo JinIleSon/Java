@@ -1,5 +1,8 @@
 package sub1;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+
 /*
  * 날짜 : 2025/07/21
  * 이름 : 손진일
@@ -43,9 +46,46 @@ public class ExceptionTest {
 		}
 		
 		// 예외상황3 - 객체 생성 안 하고 메서드 호출
+		Animal animal = null;
+		try {
+			animal.move();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
 		
+		// 예외상황4 - 잘못된 캐스팅
+		Animal a1 = new Tiger(); // 업캐스팅
+		Animal a2 = new Eagle(); // 업캐스팅
+		
+		try {
+		Tiger tiger = (Tiger)a2; // 잘못된 다운캐스팅. Eagle에 대한 다운 캐스팅이어야..
+		}catch (ClassCastException e) {
+			e.printStackTrace();
+		}
 		
 		// 일반예외(Compile-time) - 프로그램을 실행하기 전에 발생하는 에러
+		
+		// 동적 객체 생성
+		try {
+			Class cs = Class.forName("sub1.Tiger"); // 문자열 정보로 클래스 로드
+			Constructor<?> constructor = cs.getDeclaredConstructor();
+			Tiger tiger = (Tiger) constructor.newInstance();
+			
+		}catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (NoSuchMethodException e) {
+			e.printStackTrace();
+		}catch (SecurityException e) {
+			e.printStackTrace();
+		} catch (InstantiationException e) {
+			e.printStackTrace();// 실행하지도 않았는데 에러가 발생하는 것.
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			e.printStackTrace();
+		}
 		
 		
 		System.out.println("프로그램 정상 종료...");
