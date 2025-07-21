@@ -26,8 +26,6 @@ public class Main6 {
 							}
 						}else if(c[i+1] == '-')
 							i++;
-						else 
-							i++;
 					}
 					else if (c[i] == 'l' && c[i+1] == 'j')
 						i++;
