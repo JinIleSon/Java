@@ -12,22 +12,27 @@ public class Main7 {
 		int n = sc.nextInt();
 		int index = 0;
 		int count = 0;
+		int word_count = 0;
 		
 		for (int i = 0; i < n; i++) {
 			s = sc.next();
 			c = s.toCharArray();
-			for (int j = 0; j < c.length; j++) {
-				if (c[i] == c[j] && j < c.length - 1) {
-					if (c[j] == c[j+1])
-						index = j;
-					
+			word_count=0;
+			for (int z = 0; z < c.length; z++) {
+				index = z;
+				for (int j = 0; j < c.length; j++) {
+					if (c[z] == c[j] && j < c.length - 1) {
+						if (c[j] == c[j+1])
+							index = j+1;
+					}	
 				}
-				else if (c[i] == c[j] && j == c.length - 1 && c.length != 1)
-					count++;
-				else if (index == 0 && c.length > 2)
-					index = i;
+				if (index != s.lastIndexOf(c[z])) {
+					word_count++;
+					break;
+				}
+				// babb와 같이 두번째 b가 순서일 때 생각하기
 			}
-			if (index == s.lastIndexOf(c[i]))
+			if (word_count == 0)
 				count++;
 		}
 		System.out.println(count);
