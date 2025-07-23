@@ -34,7 +34,7 @@ public class BufferStreamTest {
 			while(true) {
 				
 				// 파일 읽기
-				int data = fis.read();
+				int data = bis.read();
 				
 				if (data == -1) {
 					// 파일 내용이 없으면
@@ -42,11 +42,14 @@ public class BufferStreamTest {
 				}
 				
 				// 파일 쓰기
-				fos.write(data);
+				bos.write(data);
 			}
 			System.out.println();
 			
 			// 스트림 작업 종료
+			bis.close();
+			bos.close();
+			
 			fis.close();
 			fos.close();
 			
