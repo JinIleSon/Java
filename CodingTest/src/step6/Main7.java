@@ -24,6 +24,10 @@ public class Main7 {
 					if (c[z] == c[j] && j < c.length - 1) {
 						if (c[j] == c[j+1])
 							index = j+1;
+						else {
+							index = j;
+							break;
+						}
 					}	
 				}
 				if (index != s.lastIndexOf(c[z])) {
