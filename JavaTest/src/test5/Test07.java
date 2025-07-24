@@ -22,8 +22,8 @@ public class Test07 {
 		
 		Set<Integer> lottoSet = new HashSet<>();
 		
-		for(;;) {
-			int num = (int) Math.ceil(Math.random()*43);
+		for(;;) { // while(true)와 동일
+			int num = (int) Math.ceil(Math.random()*45);
 			lottoSet.add(num);
 			
 			if(lottoSet.size() == 6) {

@@ -11,10 +11,10 @@ public class Test04 {
 		
 		String fileName = "HelloWorld.java";
 		
-		//int idx = fileName.length();
+		int idx = fileName.indexOf(".");
 		
-		String title = fileName.substring(0, 10);
-		String ext = fileName.substring(11);
+		String title = fileName.substring(0, idx);
+		String ext = fileName.substring(idx+1);
 		
 		System.out.println("파일명 : " + title);
 		System.out.println("확장자 : " + ext);
