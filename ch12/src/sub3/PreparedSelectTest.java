@@ -1,21 +1,19 @@
-package sub2;
+package sub3;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
-import sub3.User1VO;
 
 /*
  * 날짜 : 2024/07/25
  * 이름 : 손진일
- * 내용 : 자바 JDBC UPDATE 실습하기
+ * 내용 : PreparedStatement 실습하기
  */
 
-public class SelectTest {
+public class PreparedSelectTest {
 
 	public static void main(String[] args) {
 		
@@ -24,21 +22,21 @@ public class SelectTest {
 		String USER = "thswlsdlf0000";
 		String PASS = "1234";
 		
-		// 조회 결과 반환용 리스트 생성
-		List<User1VO> users = new ArrayList<>();
+		List<User1VO> users = new ArrayList<User1VO>();
 		
 		try {
 			// 데이터베이스 접속
 			Connection conn = DriverManager.getConnection(HOST,USER,PASS);
 			
-			// SQL 실행객체 생성
-			Statement stmt = conn.createStatement();
+			// SQL 실행객체 생성(PreparedStatemet)
+			String sql = "SELECT * FROM USER1 WHERE AGE >= ?"; // ?는 쿼리 파라미터. 쿼리 파라미터를 사용한 SQL(준비된 쿼리)
+			PreparedStatement psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, 20); // 1번째 쿼리 파라미터(?)에 나이 숫자 20 바인딩
 			
 			// SQL 실행
-			String sql = "SELECT * FROM USER1";
-			ResultSet rs = stmt.executeQuery(sql); // SELECT 문의 executeQuery으로 실행하고 ResultSet 반환!!!
+			ResultSet rs = psmt.executeQuery(); // SELECT executeQuery() 실행!!!
 			
-			// 결과처리(일반적으로 리스트 생성)
+			// 결과처리(SELECT문일 경우)
 			while(rs.next()) { // 커서를 다음 Row로 이동시킴, 이동할 Row가 없으면 false
 
 				// 커서가 가리키는 Row의 각 컬럼값을 추출해서 VO객체 초기화
@@ -54,7 +52,7 @@ public class SelectTest {
 			
 			// 데이터베이스 종료
 			rs.close();
-			stmt.close();
+			psmt.close();
 			conn.close();
 			
 		}catch (Exception e) {
@@ -67,5 +65,6 @@ public class SelectTest {
 		}
 		
 		System.out.println("Select 완료...");
+		
 	}
 }

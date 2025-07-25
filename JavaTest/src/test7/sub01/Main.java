@@ -1,4 +1,4 @@
-package test7.sub1;
+package test7.sub01;
 
 /*
  * 날짜 : 2025/07/24
