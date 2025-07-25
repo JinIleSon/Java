@@ -22,7 +22,7 @@ class Doctor {
 	@Override
 	public String toString() {
 		return ("의사: " + name + "(ID: " + id + ", 전문분야: " + special + ")" + "\n담당 환자 목록:\n" + 
-				patients).replace("[-", "-").replace(", -", "-").replace("]]", "]");
+				patients).replace("[-", "-").replace(", -", "\n-").replace("]]", "]\n");
 	}
 	
 	
