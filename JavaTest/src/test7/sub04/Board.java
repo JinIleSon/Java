@@ -13,11 +13,11 @@ public class Board {
 	}
 	
 	public void addArticle(Article articles) {
-		
+		this.articles.add(articles);
 	}
 	
 	public void addUser(User users) {
-		
+		this.users.add(users);
 	}
 	
 	public List<Article> getArticles() {
