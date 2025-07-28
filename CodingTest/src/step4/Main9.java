@@ -8,7 +8,7 @@ public class Main9 {
 		
 		int N = sc.nextInt();
 		int M = sc.nextInt();
-		
+		int temp = 0;
 		int A[] = new int[N];
 		
 		for (int i = 0; i < N; i++) 
@@ -18,12 +18,17 @@ public class Main9 {
 			int a = sc.nextInt() - 1;
 			int b = sc.nextInt() - 1;
 			
-			if ((b - a) % 2 == 1) { // 짝수 개만 바꿈
-				
-				
-			}else { // 홀수 개만 바꿈
-				
+			
+			int x = (b-a)/2;
+			for (int j = 0; j <= x; j++) {
+				temp = A[b];
+				A[b] = A[a];
+				A[a] = temp;
+				a++;
+				b--;
 			}
+				
+			
 			
 		}
 		
